@@ -18,7 +18,7 @@ Cependant, il existe de nombreux services qui peuvent faciliter le travail de d�
 de diverses manières. Firebase en fait partie. Il offre plusieurs modules assez interessants facilitant
 le développement backend. Google le décrit comme un  backend-as-a-service (BaaS). Parmi ces différents services on note :
 
- - **Real-time Database**
+ - **Real-time Database** <br/>
 La base de données en temps réel est une base de données hébergée dans le cloud. Les données sont stockées au format JSON et synchronisées en continu avec chaque client associé. 
 Lorsque vous créez des applications multiplates-formes avec les SDK iOS, Android et JavaScript, la plus grande partie de la demande de vos clients est basée sur une instance de base de données en temps réel et obtient par conséquent des mises à jour avec les données les plus récentes. 
 En utilisant cette fonctionnalité de Firebase, il n'est pas nécessaire de créer votre propre base de données ou votre propre API, Firebase gère tous les composants qui accompagnent généralement la création d'un backend pour les applications. Il fournit un langage de règles adaptable basé sur l'expression pour définir comment vos données doivent être organisées et quand les informations peuvent être lues ou composées.
@@ -27,7 +27,7 @@ Ce module permet de connaître les statistiques sur le nombre d’utilisateurs d
 du nombre d’heure passé sur l’application, des interfaces sur lesquelles les utilisateurs
 passent plus de temps. Des informations assez utiles à des fins de marketing
 
-- **Storage**
+- **Storage** <br/>
 Il est conçu pour les développeurs d'applications qui ont besoin de stocker et de diffuser du contenu
  généré par l'utilisateur, par exemple des photos ou des vidéos. 
  Il permet des transferts et des téléchargements de documents sécurisés pour les applications Firebase,
@@ -36,20 +36,20 @@ Il est conçu pour les développeurs d'applications qui ont besoin de stocker et
   par l'utilisateur. Firebase Storage est soutenu par Google Cloud Storage, 
   un service de stockage d'objets performant, basique et rentable.
   
-- **Cloud Messaging**
+- **Cloud Messaging** <br/>
 Il s'agit d'une solution de messagerie multiplateforme qui permet de transmettre des messages de 
 manière fiable sans frais. Un outil puissant de marketing et de publicité afin d'engager l'utilisateur.
  Vous pouvez informer un client qu'un nouvel e-mail ou d'autres informations sont accessibles à la synchronisation. 
  Vous pouvez envoyer des messages de notification pour stimuler le réengagement et la maintenance des utilisateurs.
 
 Vous pouvez voir via ce lien, consultez d'autres modules assez interessants qui rendent ce Baas très puissant [Firebase] (https://firebase.google.com/)
-## Prérequis pour exécuter le projet
+## Prérequis pour exécuter le projet 
  - **JDK**
  - **Android Studio**
  - **minSdkVersion 19** 
 
 
-## Librairies externes utilisées
+## Librairies externes utilisées 
 - Pour faire des animations graphiques : [Airbnb Lottie] (https://airbnb.io/lottie/#/)
 - Pour afficher des images  : [Picasso] (https://square.github.io/picasso/)
 
