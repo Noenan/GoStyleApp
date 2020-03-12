@@ -16,7 +16,7 @@ La création d'une application ou d'un site Web peut sembler à première vue ê
 très exhaustif impliquant des investissements importants en temps et en argent. 
 Cependant, il existe de nombreux services qui peuvent faciliter le travail de développement 
 de diverses manières. Firebase en fait partie. Il offre plusieurs modules assez interessants facilitant
-le développement backend. Google le décrit comme un  backend-as-a-service (BaaS). Parmi ces différents services on note :
+le développement backend. Google le décrit comme un  backend-as-a-service (BaaS). Parmi ces différents services ceux que nous utilisons sont :
 
  - **Real-time Database** <br/>
 La base de données en temps réel est une base de données hébergée dans le cloud. Les données sont stockées au format JSON et synchronisées en continu avec chaque client associé. 
@@ -35,12 +35,6 @@ Il est conçu pour les développeurs d'applications qui ont besoin de stocker et
   ous pouvez l'utiliser pour stocker des images, du son, des vidéos ou tout autre contenu généré 
   par l'utilisateur. Firebase Storage est soutenu par Google Cloud Storage, 
   un service de stockage d'objets performant, basique et rentable.
-  
-- **Cloud Messaging** <br/>
-Il s'agit d'une solution de messagerie multiplateforme qui permet de transmettre des messages de 
-manière fiable sans frais. Un outil puissant de marketing et de publicité afin d'engager l'utilisateur.
- Vous pouvez informer un client qu'un nouvel e-mail ou d'autres informations sont accessibles à la synchronisation. 
- Vous pouvez envoyer des messages de notification pour stimuler le réengagement et la maintenance des utilisateurs.
 
 Vous pouvez voir via ce lien, consultez d'autres modules assez interessants qui rendent ce Baas très puissant [Firebase] (https://firebase.google.com/)
 ## Prérequis pour exécuter le projet 
