@@ -22,7 +22,7 @@ le développement backend. Google le décrit comme un  backend-as-a-service (Baa
 La base de données en temps réel est une base de données hébergée dans le cloud. Les données sont stockées au format JSON et synchronisées en continu avec chaque client associé. 
 Lorsque vous créez des applications multiplates-formes avec les SDK iOS, Android et JavaScript, la plus grande partie de la demande de vos clients est basée sur une instance de base de données en temps réel et obtient par conséquent des mises à jour avec les données les plus récentes. 
 En utilisant cette fonctionnalité de Firebase, il n'est pas nécessaire de créer votre propre base de données ou votre propre API, Firebase gère tous les composants qui accompagnent généralement la création d'un backend pour les applications. Il fournit un langage de règles adaptable basé sur l'expression pour définir comment vos données doivent être organisées et quand les informations peuvent être lues ou composées.
- - **Firebase Analytics**
+ - **Firebase Analytics** <br/>
 Ce module permet de connaître les statistiques sur le nombre d’utilisateurs de votre application, 
 du nombre d’heure passé sur l’application, des interfaces sur lesquelles les utilisateurs
 passent plus de temps. Des informations assez utiles à des fins de marketing
