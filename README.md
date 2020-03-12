@@ -6,12 +6,12 @@
 Notre stack technique pour la réalisation de ce projet se compose du framework android studio avec pour backend
 le backend as a service Firebase.
 
-##Pourquoi du développement natif (Android)
+## Pourquoi du développement natif (Android)
 
 
 
 
-##Pourquoi Firebase 
+## Pourquoi Firebase 
 La création d'une application ou d'un site Web peut sembler à première vue être un processus 
 très exhaustif impliquant des investissements importants en temps et en argent. 
 Cependant, il existe de nombreux services qui peuvent faciliter le travail de développement 
@@ -43,13 +43,13 @@ manière fiable sans frais. Un outil puissant de marketing et de publicité afin
  Vous pouvez envoyer des messages de notification pour stimuler le réengagement et la maintenance des utilisateurs.
 
 Vous pouvez voir via ce lien, consultez d'autres modules assez interessants qui rendent ce Baas très puissant [Firebase] (https://firebase.google.com/)
-##Prérequis pour exécuter le projet
+## Prérequis pour exécuter le projet
  - **JDK**
  - **Android Studio**
  - **minSdkVersion 19** 
 
 
-##Librairies externes utilisées
+## Librairies externes utilisées
 - Pour faire des animations graphiques : [Airbnb Lottie] (https://airbnb.io/lottie/#/)
 - Pour afficher des images  : [Picasso] (https://square.github.io/picasso/)
 
