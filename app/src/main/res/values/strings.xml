@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">GoStyleApp</string>
+    <string name="next">SUIVANT</string>
+    <string name="skip">PASSER</string>
+    <string name="start">DEMARRER</string>
+
+    <string name="slide_1_title">Bienvenue sur GoStyle</string>
+    <string name="slide_1_desc">Découvrez les dernières promotions sur pleins d\'articles dans vos magasins.</string>
+
+    <string name="slide_2_title">Promo</string>
+    <string name="slide_2_desc">Scannez, récupérer votre code et shoppez!!!</string>
+
 </resources>
