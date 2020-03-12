@@ -7,9 +7,19 @@ Notre stack technique pour la réalisation de ce projet se compose du framework 
 le backend as a service Firebase.
 
 ## Pourquoi du développement natif (Android)
-
-
-
+Aujourd'hui beaucoup de méthodes existent permettant de faire des applications hybrides.
+Mais nous avons préféré partir sur du natif car il permet de pouvoir utiliser avec beaucoup
+de flexibilité et de facilité les ressources du téléphone comparé aux plateforme hybrides bien que permettant
+de gagner en délai et en coût.
+Avec le développement d'applications mobiles natives, l'application est créée et optimisée 
+pour une plate-forme spécifique. En conséquence, l'application affiche un niveau de performance 
+extrêmement élevé. Les applications natives sont très rapides et réactives car elles sont conçues 
+pour cette plate-forme spécifique et sont compilées à l'aide du langage de programmation de base 
+des plates-formes et des API. En conséquence, l'application est beaucoup plus efficace. 
+L'appareil stocke l'application permettant au logiciel de tirer parti de la vitesse de traitement 
+de l'appareil. Lorsque les utilisateurs naviguent dans une application mobile native, 
+le contenu et les éléments visuels sont déjà stockés sur leur téléphone, ce qui signifie 
+que les temps de chargement sont rapides.
 
 ## Pourquoi Firebase 
 La création d'une application ou d'un site Web peut sembler à première vue être un processus 
