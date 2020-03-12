@@ -51,6 +51,10 @@ Vous pouvez voir via ce lien, consultez d'autres modules assez interessants qui 
  - **JDK**
  - **Android Studio**
  - **minSdkVersion 19** 
+ 
+ ## Comment exécuter le projet
+ - importer le projet dans votre android studio
+ - appuyer sur le bouton run pour exécuter le projet
 
 
 ## Librairies externes utilisées 
