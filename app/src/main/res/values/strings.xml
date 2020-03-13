@@ -9,5 +9,12 @@
 
     <string name="slide_2_title">Promo</string>
     <string name="slide_2_desc">Scannez, récupérer votre code et shoppez!!!</string>
+    <string name="bienvenue">Bienvenue sur GoStyle!</string>
+    <string name="indication">Créez votre compte avant de commencer</string>
+    <string name="connectez">Connectez-vous !</string>
+    <string name="Signin">Sign In</string>
+    <string name="login">Login</string>
+    <string name="compteexistant">Déjà un compte ? Connectez vous !</string>
+    <string name="inscrivez">Pas encore de compte ? Inscrivez vous !</string>
 
 </resources>
