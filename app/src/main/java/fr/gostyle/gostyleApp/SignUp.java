@@ -38,6 +38,7 @@ public class SignUp extends AppCompatActivity {
 
         inscription = findViewById(R.id.button_signup);
         signinButton = findViewById(R.id.btn_link_to_login);
+        signinButton.setTypeface(typeEditText);
 
         //Redirige vers l'interface de connexion
         signinButton.setOnClickListener(new View.OnClickListener() {
