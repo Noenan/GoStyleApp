@@ -153,7 +153,7 @@ public class WelcomeActivity extends AppCompatActivity {
     };
 
     /**
-     *   Rendre la barre de notification transparente
+     * Rendre la barre de notification transparente
      */
     private void changeStatusBarColor() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
