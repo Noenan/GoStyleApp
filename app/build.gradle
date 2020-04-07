@@ -8,6 +8,7 @@ android {
         applicationId "fr.gostyle.gostyleApp"
         minSdkVersion 19
         targetSdkVersion 29
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -38,6 +39,23 @@ dependencies {
 
     //firebase realtimedatabase
     implementation 'com.google.firebase:firebase-database:19.2.1'
+
+    //firestore  dependencie
+    implementation 'com.google.firebase:firebase-firestore:21.4.2'
+
+    //For using recycler dependency of firebase to populate data
+    implementation 'com.firebaseui:firebase-ui-firestore:6.1.0'
+
+    //picasso library to show image with link
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //cardview
+    implementation 'com.android.support:appcompat-v7:29.1.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
 
 
 }

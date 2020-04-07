@@ -20,12 +20,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
 
+import fr.gostyle.gostyleApp.models.User;
+
 public class Login extends AppCompatActivity {
     TextView welcomText;
     EditText email, password;
     Button connexion, signup;
     private ProgressDialog mDialog;
+    // [START declare_auth]
     private FirebaseAuth mFirebaseAuth;
+    // [END declare_auth]
 
 
     @Override
@@ -46,7 +50,12 @@ public class Login extends AppCompatActivity {
         signup.setTypeface(typeEditText);
 
         mDialog = new ProgressDialog(this);
+
+        // [START initialize_auth]
+        // Initialize Firebase Auth
         mFirebaseAuth = FirebaseAuth.getInstance();
+        // [END initialize_auth]
+
 
         //fonction permettant de vérifier si l'utilisateur est déjà connecté pour le rediriger vers la bonne interface
         launchHomeScreen();
@@ -64,7 +73,10 @@ public class Login extends AppCompatActivity {
         connexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginUser(email.getText().toString().trim(), password.getText().toString().trim());
+                User userToSignIn = new User();
+                userToSignIn.setEmail(email.getText().toString().trim());
+                userToSignIn.setPassword(password.getText().toString().trim());
+                loginUser(userToSignIn);
             }
         });
 
@@ -75,22 +87,21 @@ public class Login extends AppCompatActivity {
     private void launchHomeScreen() {
         if (mFirebaseAuth.getCurrentUser() != null) {
             startActivity(new Intent(Login.this, MainActivity.class));
+            finish();
         }
     }
 
     /**
      * Login User
      *
-     * @param mail
-     * @param password
+     * @param userToLogin
      */
-
-    private void loginUser(final String mail, final String password) {
-        if (!TextUtils.isEmpty(mail) && !TextUtils.isEmpty(password)) {
+    private void loginUser(User userToLogin) {
+        if (!TextUtils.isEmpty(userToLogin.getEmail()) && !TextUtils.isEmpty(userToLogin.getPassword())) {
             mDialog.setMessage("Connexion en cours");
             mDialog.show();
             mDialog.setCanceledOnTouchOutside(false);
-            mFirebaseAuth.signInWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mFirebaseAuth.signInWithEmailAndPassword(userToLogin.getEmail(), userToLogin.getPassword()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {

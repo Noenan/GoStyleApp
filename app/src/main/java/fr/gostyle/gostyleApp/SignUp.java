@@ -23,6 +23,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import fr.gostyle.gostyleApp.models.User;
+
 public class SignUp extends AppCompatActivity {
     private TextView welcomText;
     private EditText editTextNom, editTextPrenom, editTextEmail, editTextPassword, editTextPassword2;
@@ -77,39 +79,40 @@ public class SignUp extends AppCompatActivity {
                 final String mail = editTextEmail.getText().toString().trim();
                 String motdepasse = editTextPassword.getText().toString().trim();
                 String motdepasse2 = editTextPassword2.getText().toString().trim();
-
-                registerUser(name, firstname, mail, motdepasse, motdepasse2);
+                User userToSave = new User();
+                userToSave.setNom(name);
+                userToSave.setPrenom(firstname);
+                userToSave.setEmail(mail);
+                userToSave.setPassword(motdepasse);
+                registerUser(userToSave, motdepasse2);
             }
         });
 
     }
 
     /**
-     * fonction permettant d'enregistrer un utilisateur dans firebase
+     * * fonction permettant d'enregistrer un utilisateur dans firebase
      *
-     * @param nom
-     * @param prenom
-     * @param email
-     * @param password
+     * @param userToregistre
      * @param password2
      */
-    private void registerUser(final String nom, final String prenom, final String email, String password, String password2) {
+    public void registerUser(final User userToregistre, String password2) {
 
-        if (!TextUtils.isEmpty(nom) && !TextUtils.isEmpty(prenom) && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(password) && !TextUtils.isEmpty(password2)) {
+        if (!TextUtils.isEmpty(userToregistre.getNom()) && !TextUtils.isEmpty(userToregistre.getPrenom()) && !TextUtils.isEmpty(userToregistre.getEmail()) && !TextUtils.isEmpty(userToregistre.getPassword()) && !TextUtils.isEmpty(password2)) {
 
-            if (password.equals(password2)) {
+            if (userToregistre.getPassword().equals(password2)) {
                 mDialog.setMessage("Inscription en cours");
                 mDialog.show();
                 mDialog.setCanceledOnTouchOutside(false);
-                mFirebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mFirebaseAuth.createUserWithEmailAndPassword(userToregistre.getEmail(), userToregistre.getPassword()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mFirebaseAuth.getCurrentUser();
                             DatabaseReference currentUser = mDatabase.child(user.getUid());
-                            currentUser.child("editTextNom").setValue(nom);
-                            currentUser.child("editTextPrenom").setValue(prenom);
-                            currentUser.child("editTextEmail").setValue(email);
+                            currentUser.child("nom").setValue(userToregistre.getNom());
+                            currentUser.child("prenom").setValue(userToregistre.getPrenom());
+                            currentUser.child("email").setValue(userToregistre.getEmail());
                             Toast.makeText(getApplicationContext(), "Inscription effectuée", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(), Login.class));
                             mDialog.dismiss();
@@ -122,7 +125,6 @@ public class SignUp extends AppCompatActivity {
                                     break;
                                 case "ERROR_INVALID_EMAIL":
                                     Toast.makeText(getApplicationContext(), "Le format de votre adresse mail est incorrect", Toast.LENGTH_LONG).show();
-
                                     editTextEmail.setError("Le format de votre adresse mail est incorrect");
                                     editTextEmail.requestFocus();
                                     break;
@@ -131,8 +133,6 @@ public class SignUp extends AppCompatActivity {
                                     break;
                             }
                         }
-
-
                     }
                 });
             } else {
@@ -143,6 +143,7 @@ public class SignUp extends AppCompatActivity {
         }
     }
 }
+
 
 
 
