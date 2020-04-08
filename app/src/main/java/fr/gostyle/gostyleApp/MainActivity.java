@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -45,9 +46,6 @@ public class MainActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mFirebaseAuth = FirebaseAuth.getInstance();
         // [END initialize_auth]
-
-        //get current user
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         fireAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -111,6 +109,22 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         mAdapter = new PromotionAdapter(options);
         mUserRecyclerView.setAdapter(mAdapter);
+
+        // Pour suivre le clic sur un élement on passe les données de l'element cliqué à l'activité affichant les détails d'une promo
+        mAdapter.setOnItemClickListener(new PromotionAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
+                Promotion promotion = documentSnapshot.toObject(Promotion.class);
+                // Toast.makeText(getApplicationContext(),"Promotion: "+ promotion.getDateLimit().toDate(),Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getApplicationContext(), DetailsPromotion.class);
+                intent.putExtra("description", promotion.getDescription());
+                intent.putExtra("imageUrl", promotion.getImgUrl());
+                intent.putExtra("magasin", promotion.getMagasin());
+                intent.putExtra("dateLimit", promotion.getDateLimit().toDate().toString());
+                startActivity(intent);
+            }
+        });
+
     }
 
     // Affichage de l'interface plus l'écoute pour constater la présence ou non de données issues de firestore

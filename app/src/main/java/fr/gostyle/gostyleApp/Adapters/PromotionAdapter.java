@@ -11,12 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.squareup.picasso.Picasso;
 
 import fr.gostyle.gostyleApp.R;
 import fr.gostyle.gostyleApp.models.Promotion;
 
 public class PromotionAdapter extends FirestoreRecyclerAdapter<Promotion, PromotionAdapter.PromotionHolder> {
+    private OnItemClickListener listener;
     /**
      * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
      * FirestoreRecyclerOptions} for configuration options.
@@ -49,7 +51,25 @@ public class PromotionAdapter extends FirestoreRecyclerAdapter<Promotion, Promot
             super(itemView);
             textDescription = itemView.findViewById(R.id.promotion_item_description);
             imageUrl = itemView.findViewById(R.id.promotion_item_image);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    if(position!= RecyclerView.NO_POSITION && listener !=null){
+                        listener.onItemClick(getSnapshots().getSnapshot(position),position);
+                    }
+                }
+            });
         }
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(DocumentSnapshot documentSnapshot, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 
 }
