@@ -23,4 +23,7 @@
     <string name="compteexistant">Déjà un compte ? Connectez vous !</string>
     <string name="inscrivez">Pas encore de compte ? Inscrivez vous !</string>
 
+    <!-- info -->
+    <string name="qrcode_info">Votre promo</string>
+
 </resources>

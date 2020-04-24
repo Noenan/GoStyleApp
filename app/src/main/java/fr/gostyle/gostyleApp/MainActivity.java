@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,11 +15,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.yarolegovich.lovelydialog.LovelyInfoDialog;
+
 
 import fr.gostyle.gostyleApp.Adapters.PromotionAdapter;
 import fr.gostyle.gostyleApp.models.Promotion;
@@ -32,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener fireAuthListener;
     // [END declare_auth]
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.qrcode:
+                startActivity(new Intent(getApplicationContext(), ScanActivity.class));
                 return true;
             case R.id.deconnexion:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -125,7 +135,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
+
 
     // Affichage de l'interface plus l'écoute pour constater la présence ou non de données issues de firestore
     @Override
