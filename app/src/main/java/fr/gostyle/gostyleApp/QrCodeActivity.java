@@ -74,6 +74,7 @@ public class QrCodeActivity extends AppCompatActivity {
                 isDetected= !isDetected;
             }
         });
+        
 
         camera_view = (CameraView)findViewById(R.id.cameraView);
         camera_view.setLifecycleOwner(this);
