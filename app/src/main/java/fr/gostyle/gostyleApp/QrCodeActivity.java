@@ -15,6 +15,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcode;
 import com.google.firebase.ml.vision.barcode.FirebaseVisionBarcodeDetector;
@@ -24,11 +29,8 @@ import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionDeniedResponse;
-import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
-import com.karumi.dexter.listener.single.PermissionListener;
 import com.otaliastudios.cameraview.CameraView;
 import com.otaliastudios.cameraview.frame.Frame;
 import com.otaliastudios.cameraview.frame.FrameProcessor;
@@ -43,6 +45,8 @@ public class QrCodeActivity extends AppCompatActivity {
 
     FirebaseVisionBarcodeDetectorOptions options;
     FirebaseVisionBarcodeDetector detector;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +78,7 @@ public class QrCodeActivity extends AppCompatActivity {
                 isDetected= !isDetected;
             }
         });
-        
+
 
         camera_view = (CameraView)findViewById(R.id.cameraView);
         camera_view.setLifecycleOwner(this);
@@ -121,7 +125,8 @@ public class QrCodeActivity extends AppCompatActivity {
                 {
                     case FirebaseVisionBarcode.TYPE_TEXT:
                     {
-                        createDialog(item.getRawValue());
+                        //createDialog(item.getRawValue());
+                        getPromotion(item.getRawValue());
                     }
                     break;
                     case FirebaseVisionBarcode.TYPE_URL:
@@ -176,5 +181,29 @@ public class QrCodeActivity extends AppCompatActivity {
 
     }
 
+    public void getPromotion(String text)
+    {
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        CollectionReference docRef = db.collection("promotions");
+        docRef.whereEqualTo("code",text).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+               if( queryDocumentSnapshots.isEmpty())
+               {
+                   Toast.makeText(QrCodeActivity.this, "Erreur", Toast.LENGTH_LONG).show();
+               }
+               else
+               {
+                   for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()) {
+                       Toast.makeText(getApplicationContext(), documentSnapshot.get("description").toString(), Toast.LENGTH_LONG).show();
+                   }
+               }
+            }
+        });
+
+
+
+    }
 
 }
