@@ -5,6 +5,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
+        multiDexEnabled true
         applicationId "fr.gostyle.gostyleApp"
         minSdkVersion 19
         targetSdkVersion 29
@@ -33,22 +34,11 @@ dependencies {
 
     // Libraries
 
-
+    implementation 'com.android.support:multidex:1.0.3'
     //lottie library for animation
 
     implementation 'com.airbnb.android:lottie:3.2.2'
-
     implementation 'com.karumi:dexter:5.0.0'
     implementation 'com.otaliastudios:cameraview:2.0.0-rc1'
 }
 
-subprojects {
-    project.configurations.all {
-        resolutionStrategy.eachDependency { details ->
-            if (details.requested.group == 'com.android.support'
-                    && !details.requested.name.contains('multidex') ) {
-                details.useVersion "29.0.2"
-            }
-        }
-    }
-}
