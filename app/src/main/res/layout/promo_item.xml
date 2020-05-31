@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardBackgroundColor="@color/colorBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/textview_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/code"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textview_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:layout_below="@+id/textview_code">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/textview_dateLimit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_limite"
+            android:layout_below="@+id/textview_description">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textview_magasin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Magasin"
+            android:layout_below="@+id/textview_dateLimit">
+
+        </TextView>
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

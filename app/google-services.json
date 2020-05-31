@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "370265152422-pq4r13jss6i6522f9a771lgsnlhdjb0u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "fr.gostyle.gostyleApp",
+            "certificate_hash": "7c02fb760c0b11cddffcd43a5102ce8bcf8472ab"
+          }
+        },
+        {
           "client_id": "370265152422-615urdg5d54f6baitl6qot6qohjl8fgu.apps.googleusercontent.com",
           "client_type": 3
         }

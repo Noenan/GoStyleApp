@@ -8,6 +8,7 @@ android {
         applicationId "fr.gostyle.gostyleApp"
         minSdkVersion 19
         targetSdkVersion 29
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -22,23 +23,48 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'com.google.firebase:firebase-firestore:21.4.3'
+
+  //  implementation 'com.android.support.:appcompat-v7:28.0.0'
+ //   implementation 'com.android.support.:cardview-v7:28.0.0'
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:22.2.0'
+
+   // implementation 'com.android.support.:design-v7:28.0.0'
+
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     //lottie library for animation
-    implementation 'com.airbnb.android:lottie:3.2.2'
+    implementation 'com.airbnb.android:lottie:3.4.0'
     //firebase analytics
-    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-analytics:17.4.2'
+
+    implementation 'com.google.firebase:firebase-firestore:21.4.3'
 
     //firebase authentification
-    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
 
     //firebase realtimedatabase
-    implementation 'com.google.firebase:firebase-database:19.2.1'
+    implementation 'com.google.firebase:firebase-database:19.3.0'
+
+    implementation 'android.arch.paging:runtime:1.0.1'
+    implementation 'android.arch.core:runtime:1.1.1'
+
+    //FirebaseUi for cloud firestore
+    implementation 'com.firebaseui:firebase-ui-firestore:6.2.0'
+    implementation 'com.firebaseui:firebase-ui-firestore:6.2.0'
+    implementation 'com.firebaseui:firebase-ui-auth:4.1.0'
+    implementation 'com.firebaseui:firebase-ui-storage:4.1.0'
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 
 }
-

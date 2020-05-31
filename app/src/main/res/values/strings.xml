@@ -20,5 +20,8 @@
     <string name="btn_link_to_login">Déjà enregistré? Connecte-toi.</string>
     <string name="compteexistant">Déjà un compte ? Connectez vous !</string>
     <string name="inscrivez">Pas encore de compte ? Inscrivez vous !</string>
+    <string name="description">Description</string>
+    <string name="code">Code</string>
+    <string name="date_limite">Date limite</string>
 
 </resources>
