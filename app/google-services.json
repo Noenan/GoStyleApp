@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "370265152422",
+    "firebase_url": "https://gostyleapp-ba36f.firebaseio.com",
+    "project_id": "gostyleapp-ba36f",
+    "storage_bucket": "gostyleapp-ba36f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370265152422:android:2853cc90d856055e32cd67",
+        "android_client_info": {
+          "package_name": "fr.gostyle.gostyleApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370265152422-615urdg5d54f6baitl6qot6qohjl8fgu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzl4BKaTY09St5oYhTuQeq4sHNIHo3FbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370265152422-615urdg5d54f6baitl6qot6qohjl8fgu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

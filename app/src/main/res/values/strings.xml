@@ -14,11 +14,16 @@
     <string name="indication">Inscrivez-vous !</string>
     <string name="login">Login</string>
     <string name="signup">Sign up</string>
+    <string name="description">15% de réductions sur une sélection de t-shirts</string>
+    <string name="magasin">GoStyleLille - 9 rue nationale, 59160</string>
     <string name="btn_login">CONNEXION</string>
     <string name="btn_register">INSCRIPTION</string>
     <string name="btn_link_to_register">Pas encore membre ? Inscris-toi.</string>
     <string name="btn_link_to_login">Déjà enregistré? Connecte-toi.</string>
     <string name="compteexistant">Déjà un compte ? Connectez vous !</string>
     <string name="inscrivez">Pas encore de compte ? Inscrivez vous !</string>
+
+    <!-- info -->
+    <string name="qrcode_info">Votre promo</string>
 
 </resources>
