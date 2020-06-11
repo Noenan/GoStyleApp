@@ -73,7 +73,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         //du qrcode
         CollectionReference mPromotionsRef = mPromotions.collection("promotions");
 
-        mPromotionsRef.whereEqualTo("code", Integer.parseInt(qrcode.getText())).get()
+        mPromotionsRef.whereEqualTo("code", qrcode.getText()).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
