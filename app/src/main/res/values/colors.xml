@@ -3,9 +3,12 @@
     <color name="colorPrimary">#114B66</color>
     <color name="colorPrimaryDark">#323636</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#fff</color>
 
     <color name="colorBackground">#EF1F1F</color>
-
+    <color name="overlay_dark_40">#66000000</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_40">#999999</color>
 
 
     <!-- Screens background color-->
