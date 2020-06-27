@@ -16,6 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.zxing.Result;
 
+import fr.gostyle.gostyleApp.models.Promotion;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class ScanActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
@@ -83,7 +84,14 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
                         } else {
 
                             for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()) {
-                                Toast.makeText(getApplicationContext(), documentSnapshot.get("description").toString(), Toast.LENGTH_LONG).show();
+                                Promotion promotion = documentSnapshot.toObject(Promotion.class);
+                                Intent intent = new Intent(getApplicationContext(), DetailsPromotion.class);
+                                intent.putExtra("description", promotion.getDescription());
+                                intent.putExtra("imageUrl", promotion.getImgUrl());
+                                intent.putExtra("magasin", promotion.getMagasin());
+                                intent.putExtra("dateLimit", promotion.getDateLimit().toDate().toString());
+                                startActivity(intent);
+                                //Toast.makeText(getApplicationContext(), documentSnapshot.get("description").toString(), Toast.LENGTH_LONG).show();
 
                             }
                         }
